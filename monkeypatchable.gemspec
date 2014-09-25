@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Monkeypatchable::VERSION
   spec.authors       = ["ecoologic"]
   spec.email         = ["erikecoologic@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.summary       = %q{Safely monkeypatch ruby and rails methods}
+  spec.description   = %q{An exception will remind you to check your monkeypatched methods when you update your ruby or rails version}
+  spec.homepage      = "https://github.com/ecoologic/monkeypatchable"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
