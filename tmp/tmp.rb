@@ -1,6 +1,7 @@
+
 class Date
   Monkeypatch.add do # <= functionality provided by the gem
-    def self.safe_parse(value, default: nil) # <= new method in foreign class
+    def self.safe_parse(value, default: :unparsable_date) # <= new method in foreign class
       Date.parse(value.to_s)
     rescue ArgumentError
       default
@@ -15,3 +16,34 @@ class BigDecimal
     end
   end
 end
+
+
+
+
+
+
+
+module FooModule
+  def self.included(base)
+    puts "Class eval"
+    class_eval do
+      puts self.inspect
+      puts inspect
+    end
+
+    puts "Instance eval"
+    instance_eval do
+      puts self.inspect
+      puts inspect
+    end
+  end
+end
+
+class Klass
+
+  def self.bar
+    puts 'class'
+  end
+
+end
+Klass.send(:include, FooModule)

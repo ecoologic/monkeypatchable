@@ -1,5 +1,7 @@
 # Monkeypatchable
 
+## Currently being developed, nothing useful yet. Please come back
+
 An exception will remind you to check your monkeypatched methods when you update
 your ruby or rails version.
 
@@ -22,7 +24,8 @@ Or install it yourself as:
 Adding this file (with your real current versions) to the root of your app
 
     # ./monkeypatchable.rb
-    Monkeypatch::RUBY_VERSION = '2.1.3'
+    # Don't fix the version until you checked your monkey patches are working properly
+    Monkeypatch::RUBY_VERSION  = '2.1.3'
     Monkeypatch::RAILS_VERSION = '4.1.2'
 
 You can monkeypatch your language / framework methods like so:
@@ -44,6 +47,9 @@ You can monkeypatch your language / framework methods like so:
         end
       end
     end
+
+It works by also adding your new methods to an instance of object, so don't do too
+fancy stuff in `add` and `override` blocks.
 
 ### After changing version
 
